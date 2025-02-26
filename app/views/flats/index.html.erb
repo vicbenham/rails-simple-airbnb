@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="my-4 text-center">All our flats</h1>
+
+  <div class="row gap-4 justify-content-center mb-5">
+    <% @flats.each do |flat| %>
+      <div class="card col-3 p-0">
+        <img src="https://cdn.apartmenttherapy.info/image/upload/v1616434651/at/house%20tours/2021-03/Maria%20H/Apartment_Therapy_-_Maria_-_March_12_202176480.jpg" alt="flat">
+
+        <div class="bg-light p-3 py-4 d-flex flex-column">
+          <strong><%= link_to flat.name, flat_path(flat), class: "text-decoration-none fs-2 text-dark" %></strong>
+          <%= flat.description %>
+        </div>
+
+        <div class="d-flex justify-content-between p-3">
+          <%= link_to "Edit", edit_flat_path(flat), class: "text-warning" %>
+          <%= link_to '<i class="fa-solid fa-xmark"></i>'.html_safe,
+            flat_path(flat[:id]),
+            data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+            class: "text-decoration-none ms-2 text-danger"
+          %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

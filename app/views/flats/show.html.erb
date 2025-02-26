@@ -1,0 +1,30 @@
+<img
+src="https://cdn.apartmenttherapy.info/image/upload/v1616434651/at/house%20tours/2021-03/Maria%20H/Apartment_Therapy_-_Maria_-_March_12_202176480.jpg"
+alt="flat" width=100% height=500 style="object-fit: cover;"
+>
+
+<div class="container row m-5">
+
+  <div class="col-8">
+    <div class="bg-light card p-3 mb-3">
+      <h1><%= @flat.name %></h1>
+      <%= @flat.address %>
+    </div>
+
+    <div class="bg-light card p-3">
+      <h2>A bit more about this flat...</h2>
+      <p><%= @flat.description %></p>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="bg-light card p-3 mb-3">
+      <p>Price per night: <%= @flat.price_per_night %>$</p>
+    </div>
+
+    <div class="bg-light card p-3">
+      <p>Max: <%= @flat.number_of_guests %> guests</p>
+    </div>
+  </div>
+
+</div>
